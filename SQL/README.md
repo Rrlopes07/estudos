@@ -1,0 +1,1 @@
+Repositório destinado aos projetos criados ao longo da formação SQL Database Specialist, ofertado pela DIO.
