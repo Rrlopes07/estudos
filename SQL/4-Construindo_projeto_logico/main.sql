@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS cars(
     idCar int auto_increment primary key,
     idClient int,
     identifier char(8) not null,
-    foreign key(idClient) references clients.idClient
+    foreign key(idClient) references clients(idClient)
 );
 
 -- criar tabela ordem de servico
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS orders(
     idOrder int auto_increment primary key,
     idClient int,
     idServiceOrder int,
-    foreign key(idClient) references clients.idClient,
-    foreign key(idServiceOrder) references serviceOrders.idServiceOrder
+    foreign key(idClient) references clients(idClient),
+    foreign key(idServiceOrder) references serviceOrders(idServiceOrder)
 );
 
 -- criar relação entre pedido e mecanico
@@ -63,8 +63,8 @@ CREATE TABLE IF NOT EXISTS mechanicistsPerOrders(
     idOrder int,
     quantity int not null,
     primary key(idMechanicist, idOrder),
-    foreign key(idMechanicist) references mechanicists.idMechanicist,
-    foreign key(idOrder) references orders.idOrder
+    foreign key(idMechanicist) references mechanicists(idMechanicist),
+    foreign key(idOrder) references orders(idOrder)
 );
 
 -- criar relação entre pedido e servico
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS servicesPerOrder(
     idService int,
     quantity int not null,
     primary key(idOrder, idProduct),
-    foreign key(idOrder) references orders.idOrder,
-    foreign key(idService) references services.idService
+    foreign key(idOrder) references orders(idOrder),
+    foreign key(idService) references services(idService)
 );
 
 -- criar relação entre pedido e produto
@@ -83,8 +83,8 @@ CREATE TABLE IF NOT EXISTS productsPerOrder(
     idProduct int,
     quantity int not null,
     primary key(idOrder, idProduct),
-    foreign key(idOrder) references orders.idOrder,
-    foreign key(idProduct) references products.idProduct
+    foreign key(idOrder) references orders(idOrder),
+    foreign key(idProduct) references products(idProduct)
 );
 
 -- Inserção de valores

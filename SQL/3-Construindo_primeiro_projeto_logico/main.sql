@@ -59,8 +59,8 @@ CREATE TABLE IF NOT EXISTS productStorage(
     idProduct int,
     quantity int,
     primary key(idStorage, idProduct),
-    foreign key(idStorage) references storages.idStorage,
-    foreign key(idProduct) references products.idProduct
+    foreign key(idStorage) references storages(idStorage),
+    foreign key(idProduct) references products(idProduct)
 );
 
 -- criar tabela de informações dos envolvidos em fornecimento ou venda
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS informations(
 CREATE TABLE IF NOT EXISTS supplier(
 	idSupplier int auto_increment primary key,
     idInfo int,
-    foreign key(idInfo) references informations.idInfo
+    foreign key(idInfo) references informations(idInfo)
 );
 
 -- cria tabela de relacionamento entre produtos e fornecedores
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS productSuppliers(
 	idSupplier int,
     idProduct int,
     primary key(idSupplier, idProduct),
-    foreign key(idSupplier) references supplier.idSupplier,
-    foreign key(idProduct) references products.idProduct
+    foreign key(idSupplier) references supplier(idSupplier),
+    foreign key(idProduct) references products(idProduct)
 );
 
 -- criar tabela vendedor
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS sellers(
     idInfo int,
     abstName varchar(255),
     location varchar(255),
-    foreign key(idInfo) references informations.idInfo
+    foreign key(idInfo) references informations(idInfo)
 );
 
 -- cria tabela de relacionamento entre produtos e vendedores
@@ -103,8 +103,8 @@ CREATE TABLE IF NOT EXISTS productSeller(
     idProduct int,
     quantity int default 1,
     primary key(idSeller, idProduct),
-    foreign key(idSeller) references sellers.idSeller,
-    foreign key(idProduct) references products.idProduct
+    foreign key(idSeller) references sellers(idSeller),
+    foreign key(idProduct) references products(idProduct)
 );
 
 -- cria tabela de relacionamento entre produtos e pedidos
@@ -114,8 +114,8 @@ CREATE TABLE IF NOT EXISTS productOrders(
     quantity int default 1,
     productStatus bool,
     primary key(idOrder, idProduct),
-    foreign key(idOrder) references orders.idOrder,
-    foreign key(idProduct) references products.idProduct
+    foreign key(idOrder) references orders(idOrder),
+    foreign key(idProduct) references products(idProduct)
 );
 
 
