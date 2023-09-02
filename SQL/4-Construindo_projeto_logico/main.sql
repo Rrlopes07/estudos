@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS servicesPerOrder(
     idOrder int,
     idService int,
     quantity int not null,
-    primary key(idOrder, idProduct),
+    primary key(idOrder, idService),
     foreign key(idOrder) references orders(idOrder),
     foreign key(idService) references services(idService)
 );
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS productsPerOrder(
 -- Inserção de valores
 INSERT INTO clients(name, CPF) VALUES
 	('José Juarez da Silva', 123456789),
-    ('Claudio Alvarez Góes', 789456123),
+    ('Claudio Alvarez Góez', 789456123),
     ('Ana Claudia Silva', 123789654),
     ('Juliana Alvarez', 456789321),
     ('Luan Cordeiro', 741369820);
