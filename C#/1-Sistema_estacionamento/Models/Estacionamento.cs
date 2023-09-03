@@ -34,7 +34,7 @@ namespace Sistema_estacionamento.Models
                 Veiculos.Add(placa.ToUpper());
                 Console.WriteLine("Placa adicionada com sucesso");
             }
-            catch (InvalidDataException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -67,7 +67,7 @@ namespace Sistema_estacionamento.Models
                     Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
                 }
             } 
-            catch (InvalidDataException e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
