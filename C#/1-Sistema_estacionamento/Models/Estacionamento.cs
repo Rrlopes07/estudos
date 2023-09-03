@@ -19,15 +19,23 @@ namespace Sistema_estacionamento.Models
             Console.WriteLine("Digite a placa do veículo para estacionar: ");
             string placa = Console.ReadLine();
 
-            VerificaString(placa);
-
-            if(this.veiculos.Contains(placa))
+            try
             {
-                throw new Exception("Já existe placa cadastrada com este valor!");
-            }
+                bool verificador = VerificaString(placa);
 
-            this.veiculos.Add(placa.ToUpper());
-            Console.WriteLine("Placa adicionada com sucesso");
+                if(this.veiculos.Contains(placa))
+                {
+                    throw new Exception("Já existe placa cadastrada com este valor!");
+                }
+
+                this.veiculos.Add(placa.ToUpper());
+                Console.WriteLine("Placa adicionada com sucesso");
+            }
+            catch (InvalidDataException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
         }
 
         public void RemoverVeiculo()
@@ -35,24 +43,33 @@ namespace Sistema_estacionamento.Models
             Console.WriteLine("Digite a placa do veículo para remover:");
             string placa = Console.ReadLine();
 
-            VerificaString(placa);
-
-            // Verifica se o veículo existe
-            if (veiculos.Contains(placa.ToUpper()))
+            try
             {
-                Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+                bool verificador = VerificaString(placa);
 
-                decimal horasEstacionado = decimal.Parse(Console.ReadLine());
-                decimal valorTotal = this.precoInicial + (precoPorHora * horasEstacionado);
+                // Verifica se o veículo existe
+                if (verificador)
+                {
+                    Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-                this.veiculos.Remove(placa);
+                    decimal horasEstacionado = decimal.Parse(Console.ReadLine());
+                    decimal valorTotal = this.precoInicial + (precoPorHora * horasEstacionado);
 
-                Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
-            }
-            else
+                    this.veiculos.Remove(placa);
+
+                    Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                }
+                else
+                {
+                    Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                }
+            } 
+            catch (InvalidDataException e)
             {
-                Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                Console.WriteLine(e.Message);
             }
+
+            
         }
 
         public void ListarVeiculos()
@@ -69,16 +86,16 @@ namespace Sistema_estacionamento.Models
             }
         }
 
-        public void VerificaString(string palavra)
+        public bool VerificaString(string palavra)
         {
-            if(palavra == null)
+            if(palavra.Length != 8)
             {
-                throw new NoNullAllowedException();
-            } 
-            else if(palavra.Length != 8)
-            {
-                throw new InvalidDataException();
+                throw new InvalidDataException("Devem ser informados 8 dígitos!");
             }
+
+            bool possuiNaLista = veiculos.Contains(palavra);
+
+            return possuiNaLista;
         }
     }
 }
