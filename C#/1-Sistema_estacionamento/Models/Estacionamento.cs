@@ -26,7 +26,7 @@ namespace Sistema_estacionamento.Models
             {
                 bool verificador = VerificaString(placa);
 
-                if(verificador)
+                if (verificador)
                 {
                     throw new Exception("Já existe placa cadastrada com este valor!");
                 }
@@ -91,7 +91,7 @@ namespace Sistema_estacionamento.Models
 
         public bool VerificaString(string palavra)
         {
-            if(palavra.Length != 8)
+            if (palavra.Length != 8)
             {
                 throw new InvalidDataException("Devem ser informados 8 dígitos!");
             }
