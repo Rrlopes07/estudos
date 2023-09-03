@@ -4,14 +4,17 @@ namespace Sistema_estacionamento.Models
 {
     public class Estacionamento
     {
-        private decimal precoInicial = 0;
-        private decimal precoPorHora = 0;
-        private List<string> veiculos = new List<string>();
+        private decimal _precoInicial = 0;
+        private decimal _precoPorHora = 0;
+        public decimal PrecoInicial { get; set; }  
+        public decimal PrecoPorHora { get; set; }
+        private List<string> _veiculos = new List<string>();
+        public List<string> Veiculos { get; }
 
         public Estacionamento(decimal precoInicial, decimal precoPorHora)
         {
-            this.precoInicial = precoInicial;
-            this.precoPorHora = precoPorHora;
+            this.PrecoInicial = precoInicial;
+            this.PrecoPorHora = precoPorHora;
         }
 
         public void AdicionarVeiculo()
@@ -28,7 +31,7 @@ namespace Sistema_estacionamento.Models
                     throw new Exception("Já existe placa cadastrada com este valor!");
                 }
 
-                this.veiculos.Add(placa.ToUpper());
+                Veiculos.Add(placa.ToUpper());
                 Console.WriteLine("Placa adicionada com sucesso");
             }
             catch (InvalidDataException e)
@@ -53,9 +56,9 @@ namespace Sistema_estacionamento.Models
                     Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
                     decimal horasEstacionado = decimal.Parse(Console.ReadLine());
-                    decimal valorTotal = this.precoInicial + (precoPorHora * horasEstacionado);
+                    decimal valorTotal = PrecoInicial + (PrecoPorHora * horasEstacionado);
 
-                    this.veiculos.Remove(placa);
+                    Veiculos.Remove(placa);
 
                     Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
                 }
@@ -75,10 +78,10 @@ namespace Sistema_estacionamento.Models
         public void ListarVeiculos()
         {
             // Verifica se há veículos no estacionamento
-            if (veiculos.Any())
+            if (Veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
-                this.veiculos.ForEach(Console.WriteLine);
+                Veiculos.ForEach(Console.WriteLine);
             }
             else
             {
@@ -93,7 +96,7 @@ namespace Sistema_estacionamento.Models
                 throw new InvalidDataException("Devem ser informados 8 dígitos!");
             }
 
-            bool possuiNaLista = veiculos.Contains(palavra);
+            bool possuiNaLista = Veiculos.Contains(palavra);
 
             return possuiNaLista;
         }
