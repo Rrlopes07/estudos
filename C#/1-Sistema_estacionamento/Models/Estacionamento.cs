@@ -37,8 +37,7 @@ namespace Sistema_estacionamento.Models
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-            }
-            
+            }   
         }
 
         public void RemoverVeiculo()
@@ -71,8 +70,6 @@ namespace Sistema_estacionamento.Models
             {
                 Console.WriteLine(e.Message);
             }
-
-            
         }
 
         public void ListarVeiculos()
