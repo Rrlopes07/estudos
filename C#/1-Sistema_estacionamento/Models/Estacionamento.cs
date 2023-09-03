@@ -23,7 +23,7 @@ namespace Sistema_estacionamento.Models
             {
                 bool verificador = VerificaString(placa);
 
-                if(this.veiculos.Contains(placa))
+                if(verificador)
                 {
                     throw new Exception("Já existe placa cadastrada com este valor!");
                 }
