@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #435334;
+    color: #FAF1E4;
+}
+
+h2, h3, #credito {
+    font-weight: 600;
+    text-align: center;
+}
+
+body h2, h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+p {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 900px;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+header li {
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: #FAF1E4;
+}
+
+header a:hover {
+    color: #FAF1E4;
+}
+
+#nav-titulo {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#foto {
+    width: 175px;
+    height: 175px;
+    border: 1px solid black;
+}
+
+#nav-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-menu {
+    all: unset;
+    text-decoration: none;
+    color: #FAF1E4;
+    font-weight: 600;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    text-align: center;
+}
+
+.botao-menu:hover {
+    color: #9EB384;
+    transition: 0.2s;
+}
+
+.botao-menu:active {
+    color: black;
+}
+
+li {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+article ul {
+    text-align: center;
+}
+
+table {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2;
+}
+
+tr:hover {
+    background-color: #183d3d;
+    transition: 0.2s;
+}
+
+th {
+    font-weight: 600;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tr-img {
+    width: 25px;
+    height: 25px;
+    margin-right: 4px;
+}
+
+.ul-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+}
+
+.container-lista {
+    display: flex;
+    align-items: center;
+}
+
+.container-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#redes-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: none;
+}
+
+.img-redes {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#contato {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    display: none;
+}
+
+input {
+    width: 350px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#form-proposta {
+    height: 150px;
+}
+
+p {
+    margin-bottom: 6px;
+}
+
+#footer {
+    margin-top: 15px;
+}
+
+#formacao {
+    display: none;
+}
+
+#exp-profissional {
+    display: none;
+}
+
+#stacks {
+    display: none;
+}
+
+#certificacoes {
+    display: none;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página dedicada à exibião do currículo do Raphael Reinor Lopes">
+    <meta name="keywords" content="curriculo, agronomia, tecnologia da informacao, administração">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Raphael - CV</title>
+</head>
+<body>
+    <header>
+        <img src="./img/raphael.png" alt="Minha bela imagem" id="foto">
+        <div id="nav-titulo">
+            <h2>Raphael Reinor Lopes</h2>
+            <h3>Eng. Agrônomo, Acadêmico em Gestão de TI</h3>
+            <h3>(041)996XX-XXXX - rrlopesXX@xxxxxx.com</h3>
+        </div>
+        
+        <nav id="nav-menu">
+            <button class="botao-menu" id="link-inicio">Início</button>
+            <button class="botao-menu" id="link-formacao">Formação</button>
+            <button class="botao-menu" id="link-exp-profissional">Experiência Proffisional</button>
+            <button class="botao-menu" id="link-stacks">Principais Stacks</button>
+            <button class="botao-menu" id="link-certificacoes">Certificações</button>
+            <button class="botao-menu" id="link-contato">Contato</button>
+        </nav>     
+    </header>
+    <main>
+        <section>
+            <article id="apresentacao">
+                <p>Formado em Agronomia, cursando Gestão em Tecnologia da Informação, em <em><b>transição de carreira</b></em> para a área de tecnologia.</p>
+                <p>As áreas de maior interesse são <em>Ciência de Dados</em> e <em>Cloud</em>.</p>
+            </article>
+            <article id="formacao">
+                <h3>Formação</h3>
+                <ul>
+                    <li>Pós-Graduação em <strong>Administração de Empresas</strong>, FGV: Em andamento</li>
+                    <li><strong>Gestão em Tecnologia da Informação</strong>, PUCPR: Em andamento</li>
+                    <li><strong>Agronomia</strong>, PUCPR: 2018</li>
+                </ul>
+            </article>
+            <article id="exp-profissional">
+                <h3>Experiência profissional</h3>
+                <table>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Cargo</th>
+                        <th>Período</th>
+                    </tr>
+                    <tr>
+                        <td class="container-tabela"><img class="tr-img" src="./img/fi.jpg" alt="figroup">Fi Group</td>
+                        <td>Estagiário</td>
+                        <td>Agosto 2023 - Presente</td>
+                    </tr>
+                    <tr>
+                        <td class="container-tabela"><img class="tr-img" src="./img/iat.png" alt="iat">Instituto Água e Terra</td>
+                        <td>Residente/Bolsista</td>
+                        <td>Janeiro 2020 - Agosto 2023</td>
+                    </tr>
+                    <tr>
+                        <td class="container-tabela"><img class="tr-img" src="./img/banco-do-brasil.png" alt="bb">Banco do Brasil</td>
+                        <td>Estagiário</td>
+                        <td>Março 2015 - Dezembro 2016</td>
+                    </tr>
+                </table>
+            </article>
+            <article id="stacks">
+                <h3>Principais Stacks</h3>
+                <ul>
+                    <li class="container-lista"><img class="ul-img" src="./img/html.png" alt="html/css/js">HTML/CSS/JS</li>
+                    <li class="container-lista"><img class="ul-img" src="./img/python.png" alt="python">Python</li>
+                    <li class="container-lista"><img class="ul-img" src="./img/java.png" alt="java">Java</li>
+                    <li class="container-lista"><img class="ul-img" src="./img/sql.png" alt="sql">SQL</li>
+                </ul>
+            </article>
+            <article id="certificacoes">
+                <h3>Certificações/Extras</h3>
+                <p>Para consulta, clique na certificação para verificar o certificado.</p>
+                <ul>
+                    <li><a href="https://cursos.alura.com.br/user/rrlopes">Certificações Alura (2022-2023)</a></li>
+                    <li><a href="https://dio.me/users/rrlopes07">Certificações DIO (2022 - 2023)</a></li>
+                    <li>Atuação junto à atividades da Pastoral Universitária (2012 - 2016)</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <div id="redes-sociais">
+        <h4>Confira nas redes sociais:</h4>
+        <a href=""><img src="./img/instagram.png" alt="instagram" class="img-redes"></a>
+        <a href="https://linkedin.com/in/raphaelrlopes"><img src="./img/linkedin.png" alt="linkedin" class="img-redes"></a>
+        <a href="https://github.com/Rrlopes07"><img src="./img/github.png" alt="github" class="img-redes"></a>
+    </div>
+    <div>
+        <form id="contato">
+            <p>Entre em contato para oferecer propostas. Caso seja de interesse, você deverá ser contatado.</p>
+            <input type="text" name="nome" placeholder="Digite seu nome">
+            <input type="email" name="email" placeholder="Digite seu email">
+            <input type="number" name="telefone" placeholder="Digite seu telefone">
+            <input id="form-proposta" type="text" name="proposta" placeholder="Informe a proposta fornecida">
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    
+    <footer id="footer">
+        <div>
+            <p id="credito">Desenvolvido por Raphael Reinor Lopes</p>
+            <p>Todos os direitos reservados ao autor.</p>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
