@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "dGdlNNjEfmgrIKo5TqXrHJz2Q/5D7qFmvTaLbNNgtbdgd60KVNgml1uQOMxiQTPqfdrhio8ui8ey/7OPBI92sw==",
+  "success": true,
+  "projectFilePath": "E:\\DIO\\C#\\3-Abstraindo_celular\\DesafioPOO.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Raphael\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.21\\microsoft.netcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Raphael\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.21\\microsoft.windowsdesktop.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Raphael\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.21\\microsoft.aspnetcore.app.ref.6.0.21.nupkg.sha512",
+    "C:\\Users\\Raphael\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.21\\microsoft.netcore.app.host.win-x64.6.0.21.nupkg.sha512"
+  ],
+  "logs": []
+}

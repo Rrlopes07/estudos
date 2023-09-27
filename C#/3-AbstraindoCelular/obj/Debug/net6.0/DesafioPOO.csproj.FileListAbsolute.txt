@@ -1,0 +1,14 @@
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.GeneratedMSBuildEditorConfig.editorconfig
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.AssemblyInfoInputs.cache
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.AssemblyInfo.cs
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.csproj.CoreCompileInputs.cache
+E:\DIO\C#\3-Abstraindo_celular\bin\Debug\net6.0\DesafioPOO.exe
+E:\DIO\C#\3-Abstraindo_celular\bin\Debug\net6.0\DesafioPOO.deps.json
+E:\DIO\C#\3-Abstraindo_celular\bin\Debug\net6.0\DesafioPOO.runtimeconfig.json
+E:\DIO\C#\3-Abstraindo_celular\bin\Debug\net6.0\DesafioPOO.dll
+E:\DIO\C#\3-Abstraindo_celular\bin\Debug\net6.0\DesafioPOO.pdb
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.dll
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\refint\DesafioPOO.dll
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.pdb
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\DesafioPOO.genruntimeconfig.cache
+E:\DIO\C#\3-Abstraindo_celular\obj\Debug\net6.0\ref\DesafioPOO.dll
