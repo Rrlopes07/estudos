@@ -2,8 +2,7 @@ Script para inicializar um laboratório para detecção de intrusão. A segunda 
 
 Pré-requisitos: Virtual Box e Vagrant
 
-
-Clone este repositório, abra o terminal na pasta e digite o seguinte comando:
+Clone este repositório, configure o ip no arquivo Vagrantfile, abra o terminal na pasta e digite o seguinte comando:
 ```
 vagrant up
 ```
