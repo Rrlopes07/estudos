@@ -1,0 +1,39 @@
+---
+- name: 'Baixa o arquivo de instalação do Wordpress'
+  get_url:
+    url: "{{ url_wordpress }}"
+    dest: '/tmp/wordpress.tar.gz'
+
+- name: 'Descompacta o Wordpress'
+  unarchive:
+    src: '/tmp/wordpress.tar.gz'
+    dest: /var/www/
+    remote_src: yes
+  become: yes
+
+- name: 'Copia o arquivo de configuração do wordpress'
+  copy:
+    src: "{{ path_apache }}/wp-config-sample.php"
+    dest: "{{ path_apache }}/wp-config.php"
+    remote_src: yes
+  become: yes
+
+- name: 'Configura o wp-config com as entradas do banco de dados'
+  replace:
+    path: "{{ path_apache }}/wp-config.php"
+    regexp: "{{ item.regex }}"
+    replace: "{{ item.value }}"
+  with_items:
+    - { regex: 'database_name_here', value: "{{ database }}" }
+    - { regex: 'username_here', value:  "{{ user }}" }
+    - { regex: 'password_here', value: "{{ password }}" }
+    - { regex: 'localhost', value: "{{ db_ip }}" }
+  become: yes
+
+- name: 'Configura apache para servir Wordpress'
+  template:
+    src: 'templates/000-default.conf.j2'
+    dest: '/etc/apache2/sites-available/000-default.conf'
+  become: yes
+  notify:
+    - restart apache

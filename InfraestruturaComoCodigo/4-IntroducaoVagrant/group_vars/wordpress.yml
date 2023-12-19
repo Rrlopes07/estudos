@@ -1,0 +1,4 @@
+---
+url_wordpress: 'https://wordpress.org/wordpress-5.0.tar.gz'
+db_ip: [Ip da maquina do banco de dados]
+path_apache: /var/www/wordpress/

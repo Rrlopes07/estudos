@@ -1,0 +1,4 @@
+---
+user: "{{ lookup('env', 'DB_USER') }}"
+password: "{{ lookup('env', 'DB_PASSWORD') }}"
+database: "wordpress_db"
