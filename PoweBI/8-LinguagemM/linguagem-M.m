@@ -1,0 +1,35 @@
+let
+    #"Requisição" = 
+        (numeroPagina) =>
+            Json.Document(
+                Web.Contents("http://localhost:8080", 
+                [
+                    RelativePath = "/medicos",
+                    Query = [
+                        page = Number.ToText(numeroPagina)
+                    ]
+                ])
+            ),
+
+    #"Total Paginas" = #"Requisição"(1)[totalPages], 
+
+    #"Lista Dados" = List.Generate(
+                                    () => [ Pagina = 0, Consulta = try #"Requisição"(0)[content] otherwise null],
+                                    each [Pagina] < #"Total Paginas",
+                                    each [Consulta = try #"Requisição"([Pagina]+1)[content] otherwise null, Pagina = [Pagina]+1],
+                                    each [Consulta]
+                    ), 
+
+    #"Tabela" = 
+            Table.ExpandRecordColumn(
+                Table.ExpandListColumn(
+                    Table.FromList(
+                        #"Lista Dados",
+                        Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+                    "Column1"
+                ), "Column1", 
+                {"id", "nome", "email", "crm", "especialidade"}, 
+                {"Id", "Nome", "Email", "CRM", "Especialidade"} 
+            )
+in
+    #"Tabela"
